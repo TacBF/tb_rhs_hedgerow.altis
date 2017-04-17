@@ -1,0 +1,105 @@
+// USA - Marines (MARPAT-WD)
+// Author: Cole
+
+gear[] =
+{
+// WEAPONS
+
+	// Rifles
+	{"rhs_weap_m4a1_carryhandle", {__ICE_gear_Rifleman, __ICE_gear_SL}},
+	{"rhs_weap_m4a1_carryhandle_grip", {__ICE_gear_Rifleman, __ICE_gear_SL}, 1},
+	{"rhs_weap_m16a4_carryhandle", {__ICE_gear_basicRifleRoles}},
+	{"rhs_weap_m16a4_carryhandle_grip", {__ICE_gear_basicRifleRoles}, 1},
+	{"rhs_weap_m4_carryhandle", {__ICE_gear_Crewman, __ICE_gear_Pilot}},
+	{"rhs_weap_m16a4_carryhandle_M203", {__ICE_gear_Grenadier}},
+	{"arifle_SDAR_F", {__ICE_gear_Diver, __ICE_gear_Medic}},
+	{"rhs_weap_m27iar", {__ICE_gear_Rifleman}, 1},
+		
+	// Marksman/Sniper Rifles
+	{"rhs_weap_m14ebrri", {__ICE_gear_Marksman}},
+	{"rhs_weap_XM2010", {__ICE_gear_Sniper}},
+		
+	// Machine Guns
+	{"rhs_weap_m249_pip_S", {__ICE_gear_MG}},
+	{"rhs_weap_m240G", {__ICE_gear_MG}},
+		
+	// Shotguns
+	{"rhs_weap_M590_8RD", {__ICE_gear_CombatEngineer}},
+		
+	// Pistols
+	{"rhsusf_weap_m1911a1", {__ICE_gear_allRoles}},
+		
+	// AT Launchers
+	{"CUP_launch_M136", {__ICE_gear_LightAT}},
+	{"CUP_launch_Mk153Mod0", {__ICE_gear_HeavyAT}}, 	
+		
+	// AA Launchers
+	{"rhs_weap_fim92", {__ICE_gear_AA}}, 
+	
+	
+// ATTACHMENTS
+
+	// Rifle Scopes
+	{"rhsusf_acc_EOTECH", {__ICE_gear_midRangeScopeRoles, __ICE_gear_Diver, __ICE_gear_MG}, 1},
+	{"rhsusf_acc_eotech_552", {__ICE_gear_midRangeScopeRoles, __ICE_gear_Diver, __ICE_gear_MG}},
+	{"rhsusf_acc_compm4", {__ICE_gear_midRangeScopeRoles, __ICE_gear_Diver, __ICE_gear_MG}, 1},
+	{"optic_MRCO", {__ICE_gear_Rifleman}},
+	{"optic_Hamr", {__ICE_gear_SL}},
+		
+	// Sniper/Marksman Scopes
+	{"optic_LRPS", {__ICE_gear_Sniper}},
+	{"optic_SOS", {__ICE_gear_Marksman}},
+	
+	// AT Sights
+	{"CUP_optic_SMAW_Scope", {__ICE_gear_HeavyAT}}, 
+		
+	// Barrel Attachments
+	{"rhsusf_acc_harris_bipod", {__ICE_gear_Sniper, __ICE_gear_Marksman}},
+	{"rhsusf_acc_SF3P556", {__ICE_gear_midRangeScopeRoles, __ICE_gear_Diver}},
+	
+
+// EQUIPMENT
+
+	// Grenades
+	{"rhs_mag_m67", {__ICE_gear_allRoles}},	
+	{"rhs_mag_mk84", {__ICE_gear_allRoles}, 1},
+	{"rhs_mag_an_m14_th3", {__ICE_gear_allRoles}, 1},
+	{"SmokeShell", {__ICE_gear_allRoles}},
+	{"SmokeShellYellow", {__ICE_gear_allRoles}, 1},
+	{"SmokeShellGreen", {__ICE_gear_allRoles}, 1},
+	{"SmokeShellRed", {__ICE_gear_allRoles}, 1},
+	{"SmokeShellPurple", {__ICE_gear_allRoles}, 1},
+	{"SmokeShellOrange", {__ICE_gear_allRoles}, 1},
+	{"SmokeShellBlue", {__ICE_gear_allRoles}, 1},
+	{"Chemlight_green", {__ICE_gear_allRoles}, 1},
+	{"Chemlight_red", {__ICE_gear_allRoles}, 1},
+	{"Chemlight_yellow", {__ICE_gear_allRoles}, 1},
+	{"Chemlight_blue", {__ICE_gear_allRoles}, 1},
+	{"B_IR_Grenade", {__ICE_gear_SL, __ICE_gear_Sniper, __ICE_gear_Crewman}, 1},
+		
+	// Explosives
+	{"DemoCharge_Remote_Mag", {__ICE_gear_CombatEngineer, __ICE_gear_Diver}},
+	{"ClaymoreDirectionalMine_Remote_Mag", {__ICE_gear_CombatEngineer}},
+		
+	// Backpacks
+	{"rhsusf_assault_eagleaiii_coy", {__ICE_gear_Inf}},
+	{"B_Carryall_khk", {__ICE_gear_HeavyAT}, 1},
+	{"B_Parachute", {__ICE_gear_allRoles}, 1},
+	{"tf_rt1523g_big_bwmod", {__ICE_gear_allRoles}, 1},
+	
+	// Flares
+	{"rhs_weap_rsp30_green", {__ICE_gear_allRoles}},
+	{"rhs_weap_rsp30_red", {__ICE_gear_allRoles}, 1},
+	{"rhs_weap_rsp30_white", {__ICE_gear_allRoles}, 1},
+		
+	// Binoculars
+	{"Binocular", {__ICE_gear_allRoles}, 1},
+	{"TB_laserDesignatorNVG", {__ICE_gear_SL, __ICE_gear_Sniper}, 1},
+	{"LaserBatteries", {__ICE_gear_SL, __ICE_gear_Sniper}, 1},
+	{"lerca_1200_tan", {__ICE_gear_Marksman, __ICE_gear_Crewman}, 1},
+	{"NVGoggles", {__ICE_gear_allRoles}},
+		
+	// Other
+	{"ToolKit", {__ICE_gear_CombatEngineer}},
+	{"MineDetector", {__ICE_gear_CombatEngineer, __ICE_gear_Rifleman}},
+};

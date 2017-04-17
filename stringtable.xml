@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Tactical Battlefield">
+<Package name="Missions">
+
+<Container name="TB_Hedgerow">
+
+	<Key ID="STR_TB_missionTitle_TB_Hedgerow">
+		<Original>Hedgerow</Original>
+		<English>Hedgerow</English>
+		<German>Hedgerow</German>
+		<Italian>Hedgerow</Italian>
+		<Spanish>Hedgerow</Spanish>
+		<French>Hedgerow</French>
+		<Czech>Hedgerow</Czech>
+		<Russian>Hedgerow</Russian>
+		<Polish>Hedgerow</Polish>
+		<Hungarian>Hedgerow</Hungarian>
+	</Key>
+
+	<Key ID="STR_TB_briefingName_TB_Hedgerow">
+		<Original>TacBF A&amp;S[T-10]: Hedgerow</Original>
+		<English>TacBF A&amp;S[T-10]: Hedgerow</English>
+		<German>TacBF A&amp;S[T-10]: Hedgerow</German>
+		<Italian>TacBF A&amp;S[T-10]: Hedgerow</Italian>
+		<Spanish>TacBF A&amp;S[T-10]: Hedgerow</Spanish>
+		<French>TacBF A&amp;S[T-10]: Hedgerow</French>
+		<Czech>TacBF A&amp;S[T-10]: Hedgerow</Czech>
+		<Russian>TacBF A&amp;S[T-10]: Hedgerow</Russian>
+		<Polish>TacBF A&amp;S[T-10]: Hedgerow</Polish>
+		<Hungarian>TacBF A&amp;S[T-10]: Hedgerow</Hungarian>
+	</Key>
+
+</Container>
+
+</Package>
+</Project>

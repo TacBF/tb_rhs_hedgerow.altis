@@ -1,0 +1,50 @@
+// Last changed: 22 Feb 2014.
+
+#define __prefix _this
+#define __isNight (dayTime < 4 || dayTime > 20)
+
+#define __ICE_gear_Rifleman 0
+#define __ICE_gear_Grenadier 1
+#define __ICE_gear_MG 2
+#define __ICE_gear_Medic 3
+#define __ICE_gear_CombatEngineer 4
+#define __ICE_gear_LightAT 5
+#define __ICE_gear_HeavyAT 6
+#define __ICE_gear_AA 7
+#define __ICE_gear_Marksman 8
+#define __ICE_gear_Sniper 9
+#define __ICE_gear_SL 10
+#define __ICE_gear_Crewman 11
+#define __ICE_gear_Pilot 12
+#define __ICE_gear_Diver 13
+
+#define __ICE_gear_allRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_Marksman, __ICE_gear_Sniper, __ICE_gear_SL, __ICE_gear_Crewman, __ICE_gear_Pilot, __ICE_gear_Diver
+
+// excludes: special rifles: __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Marksman, __ICE_gear_Sniper
+#define __ICE_gear_basicRifleRoles __ICE_gear_Rifleman, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_SL, __ICE_gear_Crewman, __ICE_gear_Pilot, __ICE_gear_Diver
+
+// excludes: alternate scopes: __ICE_gear_Marksman, __ICE_gear_Sniper, __ICE_gear_Pilot
+#define __ICE_gear_commonScopeRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_SL, __ICE_gear_Crewman
+
+// excludes: mid-range scopes: __ICE_gear_MG, __ICE_gear_Marksman, __ICE_gear_Sniper, __ICE_gear_Crewman, __ICE_gear_Pilot
+#define __ICE_gear_midRangeScopeRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_SL
+
+// excludes: vehicle roles: __ICE_gear_Crewman, __ICE_gear_Pilot
+#define __ICE_gear_infantryRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_Marksman, __ICE_gear_Sniper, __ICE_gear_SL
+
+// excludes: grenadier, MG, medic, engineer, marksman, sniper, crewman, pilot
+#define __ICE_gear_heavyRifleRoles __ICE_gear_Rifleman, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_SL
+
+// Note: excludes MG (in A2)
+#define __ICE_gear_allBackpackCapableRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Medic, __ICE_gear_CombatEngineer, /* __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, */ __ICE_gear_Marksman, __ICE_gear_Sniper, __ICE_gear_SL /*, __ICE_gear_Crewman, __ICE_gear_Pilot */
+
+// excludes: medic, sniper
+// same as: ([__ICE_gear_allBackpackCapableRoles]-[__ICE_gear_Medic, __ICE_gear_Sniper])
+#define __ICE_gear_allTripodBackpackRoles __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_CombatEngineer, __ICE_gear_Marksman, __ICE_gear_SL, __ICE_gear_Diver
+
+
+
+
+
+// Note: excludes Crewman, Pilot, Sniper
+#define __ICE_gear_Inf __ICE_gear_Rifleman, __ICE_gear_Grenadier, __ICE_gear_MG, __ICE_gear_Medic, __ICE_gear_CombatEngineer, __ICE_gear_LightAT, __ICE_gear_HeavyAT, __ICE_gear_AA, __ICE_gear_Marksman, __ICE_gear_SL, __ICE_gear_Diver

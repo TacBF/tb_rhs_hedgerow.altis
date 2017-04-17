@@ -1,0 +1,80 @@
+// Desc: this file is #include'd from each mission's description.ext
+//-----------------------------------------------------------------------------
+class Header
+{
+	gameType = SC;
+	minPlayers = 2;
+	maxPlayers = 100;
+  playerCountMultipleOf = 2;
+};
+//-----------------------------------------------------------------------------
+respawn = "BASE";
+respawnDelay = 70;
+respawnDialog = 0; // 0=No,1=Yes. Show the BIS scoreboard and respawn countdown timer for a player if he is killed.
+
+onLoadIntroTime = false; // false=hide mission date/time
+onLoadMissionTime = false; // false=hide mission date/time
+
+disabledAI = 1; // 1=removes playable units which do not have a human player
+
+briefing = 1; // Probably not needed for public servers, but might be useful for competition servers.
+debriefing = 0; // Doesn't work in MP? 0=hide, 1=show. Determines whether to show the final debriefing dialog, showing stats and objectives. It has a Continue button to confirm readiness.
+//-----------------------------------------------------------------------------
+// loadingScreen:
+
+// TB_loadingScreen_imagePath defines the path of the loadingScreen image file.
+// N.B.: TB_loadingScreen_imagePath should be #define'd in mission's description.ext first
+#ifndef TB_loadingScreen_imagePath
+#define TB_loadingScreen_imagePath "\ICE\tb_missions\data\loadings\generic\loadingScreen.paa"
+#endif
+
+// 1st loading screen shows while loading init.sqf description.ext, prior to init.sqf loading (and some addon or engine init's).
+loadScreen = TB_loadingScreen_imagePath;
+overviewPicture = TB_loadingScreen_imagePath;
+//-----------------------------------------------------------------------------
+class Params
+{
+	class TB_params_GameDuration
+	{
+		title = "Game duration (minutes)";
+		values[] = {0,60,90,120,150,180,210,240};
+		default = 120;
+		texts[] = {"No limit (ticket based)","60 min","90 min","120 min","150 min","180 min","210 min","240 min"};
+	};
+	class TB_params_HourOfDay
+	{
+		title = "Day time: hour";
+		values[] = {-1,-2,-10,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+		default = -2;
+		texts[] = {"Random 24 hour","Random daytime only","Mission Designed","00:XX","01:XX","02:XX","03:XX","04:XX","05:XX","06:XX","07:XX","08:XX","09:XX","10:XX","11:XX","12:XX","13:XX","14:XX","15:XX","16:XX","17:XX","18:XX","19:XX","20:XX","21:XX","22:XX","23:XX"};
+	};
+	class TB_params_MinuteOfDay
+	{
+		title = "Day time: minutes";
+		values[] = {-1,-10,0,5,10,15,20,25,30,35,40,45,50,55};
+		default = -1;
+		texts[] = {"Random","Mission Designed","XX:00","XX:05","XX:10","XX:15","XX:20","XX:25","XX:30","XX:35","XX:40","XX:45","XX:50","XX:55"};
+	};
+	class TB_params_Weather
+	{
+		title = "Weather: clouds, rain";
+		values[] = {-1,-2,0,1,2,3,4,5,6};
+		default = 1;
+		texts[] = {"Random","Random, dry","Mission Designed","Clear","Light cloud","Cloudy","Light rain","Medium rain","Heavy constant rain"};
+	};
+	class TB_params_Fog
+	{
+		title = "Weather: fog";
+		values[] = {-1,0,1,2,3,4,5};
+		default = 0;
+		texts[] = {"Random","Mission Designed","No fog","Little fog","Foggy","Thick fog","Very thick fog"};
+
+	};
+	class TB_params_MaxViewDistance
+	{
+		title = "Maxiumum allowed view distance (metres)";
+		values[] = {500,1000,1500,2000,2500,3000,3500,4000,4500,5000};
+		default = 2500;
+		texts[] = {"500","1000","1500","2000","2500","3000","3500","4000","4500","5000"};
+	};
+};

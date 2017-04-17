@@ -1,0 +1,50 @@
+items[] =
+{
+// COMMON SPECIAL ITEMS
+
+	{"ItemMap", {__ICE_gear_allRoles}},
+	{"ItemCompass", {__ICE_gear_allRoles}},
+	{"ItemWatch", {__ICE_gear_allRoles}},
+	{"ItemRadio", {__ICE_gear_allRoles}},
+	{"ItemGPS", {__ICE_gear_Sniper, __ICE_gear_SL, __ICE_gear_Crewman, __ICE_gear_Pilot}},
+
+	
+// MEDIC GEAR
+
+	{"TB_Medic_Pack", {__ICE_gear_Medic}},
+
+	{"ICE_FieldDressing", {__ICE_gear_allRoles}},
+	{"ICE_Morphine", {__ICE_gear_Medic}},
+	{"ICE_Adrenaline", {__ICE_gear_allRoles}},
+
+
+// GLASSES/GOGGLES
+
+	// These glasses/goggles cannot be directly added to a crate. Instead, they are required for alternate menus.
+	{"G_Diving", {__ICE_gear_Inf}}, // won't attach if not scuba uniform?
+	
+	{"G_Bandanna_blk", {__ICE_gear_allRoles}},
+	{"G_Bandanna_beast", {__ICE_gear_infantryRoles}},
+	{"G_Bandanna_khk", {__ICE_gear_infantryRoles}},
+	{"G_Bandanna_oli", {__ICE_gear_infantryRoles}},
+	{"G_Bandanna_tan", {__ICE_gear_infantryRoles}},
+	
+	{"G_Shades_Black", {__ICE_gear_allRoles}},
+	{"G_Shades_Blue", {__ICE_gear_allRoles}},
+	{"G_Sport_Blackred", {__ICE_gear_allRoles}},
+	{"G_Spectacles", {__ICE_gear_allRoles}},
+	{"G_Spectacles_Tinted", {__ICE_gear_allRoles}},
+	{"G_Combat", {__ICE_gear_allRoles}},
+	{"G_Lowprofile", {__ICE_gear_allRoles}},
+	{"G_Shades_Green", {__ICE_gear_allRoles}},
+	{"G_Shades_Red", {__ICE_gear_allRoles}},
+	{"G_Squares", {__ICE_gear_allRoles}},
+	{"G_Squares_Tinted", {__ICE_gear_allRoles}},
+	{"G_Sport_BlackWhite", {__ICE_gear_allRoles}},
+	{"G_Sport_Blackyellow", {__ICE_gear_allRoles}},
+	{"G_Sport_Greenblack", {__ICE_gear_allRoles}},
+	{"G_Sport_Checkered", {__ICE_gear_allRoles}},
+	{"G_Sport_Red", {__ICE_gear_allRoles}},
+	{"G_Tactical_Black", {__ICE_gear_allRoles}},
+	{"G_Tactical_Clear", {__ICE_gear_allRoles}}
+};

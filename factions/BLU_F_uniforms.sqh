@@ -1,0 +1,59 @@
+// USA - Marines (MARPAT-WD)
+// Author: Cole
+
+uniforms[] =
+{
+// UNIFORMS
+	
+	// Infantry
+	{"rhs_uniform_FROG01_wd", {__ICE_gear_allRoles}},
+		
+	// Sniper
+	{"U_B_FullGhillie_ard", {__ICE_gear_Sniper}},
+	{"U_B_FullGhillie_lsh", {__ICE_gear_Sniper}},
+	{"U_B_FullGhillie_sard", {__ICE_gear_Sniper}},
+		
+	// Pilot
+	{"U_B_HeliPilotCoveralls", {__ICE_gear_Pilot}},
+	
+	// Diver
+	{"U_B_Wetsuit", {__ICE_gear_Inf}},
+
+// VESTS
+	
+	// Infantry
+	{"rhsusf_spc", {__ICE_gear_allRoles}},
+	{"rhsusf_spc_rifleman", {__ICE_gear_Inf}},
+	{"rhsusf_spc_corpsman", {__ICE_gear_Medic}},
+	{"rhsusf_spc_teamleader", {__ICE_gear_Grenadier}},
+	{"rhsusf_spc_iar", {__ICE_gear_CombatEngineer}},
+	{"rhsusf_spc_squadleader", {__ICE_gear_SL}},
+	{"rhsusf_spc_mg", {__ICE_gear_MG}},
+	{"rhsusf_spc_crewman", {__ICE_gear_Crewman}},
+	{"rhsusf_spc_marksman", {__ICE_gear_Marksman}},
+	
+	// Pilot
+	{"V_PlateCarrier1_blk", {__ICE_gear_Pilot}},
+	
+	// Diver
+	{"V_RebreatherB", {__ICE_gear_Inf}},
+
+// HELMETS
+	
+	// Infantry
+	{"rhsusf_lwh_helmet_marpatwd", {__ICE_gear_Inf}},
+	{"rhs_Booniehat_marpatwd", {__ICE_gear_Marksman, __ICE_gear_Sniper}},
+		
+	// Crewman
+	{"rhsusf_cvc_green_helmet", {__ICE_gear_Crewman}},
+		
+	// Pilot
+	{"rhsusf_hgu56p", {__ICE_gear_Pilot}},
+	
+// GLASSES
+	
+	{"rhs_googles_black", {__ICE_gear_allRoles}},
+	{"rhs_googles_orange", {__ICE_gear_allRoles}},
+	{"rhs_googles_yellow", {__ICE_gear_allRoles}},
+	{"rhs_googles_clear", {__ICE_gear_allRoles}}
+};

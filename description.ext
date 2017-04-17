@@ -1,0 +1,12 @@
+#define TB_loadingScreen_imagePath "tb_Hedgerow_loadingScreen.jpg"
+//#define TB_loadingScreen_imagePath "\a3\ui_f\data\Logos\arma3_expansion_ca.paa"
+
+onLoadName=$STR_TB_missionTitle_TB_Hedgerow;
+author="Gunther.S (TacBF team)";
+onLoadMission=$STR_ICE_briefingDescription_AAS;
+
+#include "tb_description.sqh"
+#include "tb_settings.hpp"
+#include "tb_objectReplacements.hpp"
+#include "tb_magazineLimitations.hpp"
+#include "tb_supply.hpp"

@@ -1,0 +1,201 @@
+// RUS - Marines (EMR-Summer)
+// Author: Cole
+
+#include "\ice\ice_gear\kitDefines.sqh"
+
+private ["_result", "_role", "_side", "_faction",
+	"_weapons", "_attachments", "_magazines", "_commonOrdnance",
+	"_uniform", "_vest", "_backpack",
+	"_uniformItems", "_vestItems", "_backpackItems",
+	"_assignedItems", "_helmet", "_glasses", "_nvGoggles", "_binoculars", "_nvGogglesForAll"];
+
+_role = _this select 0;
+
+//====================================================//
+//				  Default Loadout                     // 
+//====================================================//
+
+	// Up to 3 weapons = ["primary", "secondary", "handgun"]
+	_weapons = ["rhs_weap_ak74m"];
+	// Up to 3 attachments per weapon = [["primary"], ["secondary"], ["handgun"]]
+	_attachments = [["rhs_acc_ekp1", "rhs_acc_dtk"], [], []];
+	
+	// Magazines for all weapons, unlimited array, added to any container with space available.
+	_magazines = [["rhs_30Rnd_545x39_AK", 8]];
+	// Common gear items, these will be added to any container with space available.
+	_commonOrdnance = [["rhs_mag_rgd5", 2],["SmokeShell", 2],["ICE_FieldDressing", 4],["ICE_Adrenaline", 2],["ICE_Morphine", 1]];
+	
+	// Containers
+	_uniform = "rhs_uniform_vdv_emr";
+	_vest = "rhs_6b23_digi_6sh92";
+	_backpack = "";
+
+	_helmet = "rhs_6b28";
+	_glasses = "";
+	_assignedItems = ["ItemMap", "ItemRadio", "ItemCompass", "ItemWatch"];
+	_nvGoggles = if (__isNight) then {"NVGoggles";} else {"";};
+	_binoculars = "Binocular";
+	
+	// optional alternate method, which allows you to list items specifically for this container type. Otherwise use "_magazines" and/or "_commonOrdnance" instead. If using both, ensure you do not double up items.
+	_uniformItems = [];
+	_vestItems = [];
+	_backpackItems = [];
+
+//====================================================//
+//					Kit Overrides                     // 
+//====================================================//
+
+switch (_role) do
+{
+	case __ICE_gear_Rifleman:
+	{
+		_vest = "rhs_6b23_digi_rifleman";
+	};
+	
+	case __ICE_gear_Grenadier:
+	{
+		_weapons = ["rhs_weap_ak74m_gp25"];
+		_vest = "rhs_6b23_digi_6sh92_vog";
+		_magazines = if (__isNight) then {[["rhs_30Rnd_545x39_AK", 8], ["rhs_VOG25", 8], ["rhs_VG40OP_red", 4]];} else {[["rhs_30Rnd_545x39_AK", 8], ["rhs_VOG25", 8], ["rhs_GRD40_White", 4]];};
+	};
+	
+	case __ICE_gear_MG:
+	{
+		_weapons = ["rhs_weap_pkp"];
+		_attachments = [[], [], []];
+		_backpack = "rhs_assault_umbts";
+		_magazines = [["rhs_100Rnd_762x54mmR", 5]];
+	};
+	
+	case __ICE_gear_Medic:
+	{
+		_vest = "rhs_6b23_digi_medic";
+		_commonOrdnance = [["rhs_mag_rgd5", 2], ["SmokeShell", 8], ["ICE_FieldDressing", 20], ["ICE_Adrenaline", 20], ["ICE_Morphine", 10]];
+	};
+	
+	case __ICE_gear_CombatEngineer:
+	{
+		_vest = "rhs_6b23_digi_engineer";
+		_backpack = "rhs_assault_umbts";
+		_backpackItems = [["DemoCharge_Remote_Mag", 4]];
+	};
+	
+	case __ICE_gear_LightAT:
+	{
+		_weapons pushback "CUP_launch_RPG18";
+		_magazines pushback ["CUP_RPG18_M", 1];
+		_backpack = "rhs_assault_umbts";
+	};
+	
+	case __ICE_gear_HeavyAT:
+	{
+		_weapons pushback "rhs_weap_rpg7";
+		_attachments set [1, ["rhs_acc_pgo7v"]];
+		_magazines pushback ["rhs_rpg7_PG7VL_mag", 3];
+		_backpack = "rhs_assault_umbts";
+	};
+	
+	case __ICE_gear_AA:
+	{
+		_weapons pushback "rhs_weap_igla";
+		_magazines pushback ["rhs_mag_9k38_rocket", 1];
+		_backpack = "rhs_assault_umbts";
+	};
+	
+	case __ICE_gear_Marksman:
+	{
+		_weapons = ["rhs_weap_svds"];
+		_attachments = [["rhs_acc_pso1m2"], [], []];
+		_magazines = [["rhs_10Rnd_762x54mmR_7N1", 8]];
+		_binoculars = "rhs_pdu4";
+	};
+	
+	case __ICE_gear_Sniper:
+	{
+		_weapons = ["rhs_weap_svdp_npz", "rhs_weap_pya"];
+		_attachments = [["optic_LRPS"], [], []];
+		_magazines = [["rhs_10Rnd_762x54mmR_7N1", 8], ["rhs_mag_9x19_17", 3]];
+		_assignedItems pushback "ItemGPS";
+		_commonOrdnance append [["SmokeShellRed", 2], ["LaserBatteries",2]];
+		_binoculars = "TB_laserDesignatorNVG";
+		_helmet = "rhs_Booniehat_digi";
+		_backpack = "tf_mr3000_rhs";
+		_vest = "rhs_6b23_digi_sniper";
+	};
+	
+	case __ICE_gear_SL:
+	{
+		_attachments = [["rhs_acc_1p29", "rhs_acc_dtk"], [], []];
+		_backpack = "tf_mr3000_rhs";
+		_assignedItems pushback "ItemGPS";
+		_commonOrdnance append [["SmokeShellRed", 2], ["LaserBatteries",2]];
+		_binoculars = "TB_laserDesignatorNVG";
+		_vest = "rhs_6b23_digi_6sh92_radio";
+	};
+	
+	case __ICE_gear_Crewman:
+	{
+		_weapons = ["rhs_weap_ak74m_folded"];
+		_attachments = [[], [], []];
+		_magazines = [["rhs_30Rnd_545x39_AK", 5]];
+		_assignedItems pushback "ItemGPS";
+		_backpack = "tf_mr3000_rhs";
+		_helmet = "rhs_tsh4";
+		_vest = "rhs_6b23_digi_crewofficer";
+		_commonOrdnance pushback ["SmokeShellRed", 2];
+		_binoculars = "rhs_pdu4";
+	};
+	
+	case __ICE_gear_Pilot:
+	{
+		_weapons = ["rhs_weap_ak74m_folded"];
+		_attachments = [[], [], []];
+		_magazines = [["rhs_30Rnd_545x39_AK", 5]];
+		_assignedItems pushback "ItemGPS";
+		_uniform = "rhs_uniform_df15";
+		_helmet = "rhs_zsh7a_mike";
+		_vest = "rhs_vydra_3m";
+		_commonOrdnance pushback ["SmokeShellRed", 2];
+		_backpack = "B_Parachute";
+	};
+	
+	case __ICE_gear_Diver:
+	{
+		_assignedItems pushback "ItemGPS";
+		_weapons = ["arifle_SDAR_F"];
+		_attachments = [[], [], []];
+		_magazines = [["20Rnd_556x45_UW_mag", 10]];
+		_vest = "V_RebreatherIR";
+		_uniform = "U_O_Wetsuit";
+		_helmet = "";
+		_glasses = "G_Diving";
+	};
+};
+
+//-----------------------------------------------------------------------------
+_nvGogglesForAll = [["gear", "NVGogglesForAll"], "east", 1, true] call ICE_fnc_getSetting;
+if (_nvGogglesForAll == 0) then {_nvGoggles = "";};
+if (_nvGoggles != "") then { _assignedItems pushBack _nvGoggles };
+if (_binoculars != "") then { _assignedItems pushBack _binoculars };
+//-----------------------------------------------------------------------------
+_result =
+[
+	_weapons,
+	_attachments, // nested array
+	_magazines, // nested array - in A3, all magazines should be in each container's items list.
+	_commonOrdnance, // combined nested/single array - in A3, all magazines should be in each container's items list.
+
+	_uniform,
+	_vest,
+	_backpack,
+
+	_uniformItems,
+	_vestItems,
+	_backpackItems,
+
+	_assignedItems,
+	_helmet,
+	_glasses
+];
+//-----------------------------------------------------------------------------
+_result
